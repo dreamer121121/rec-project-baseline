@@ -50,9 +50,6 @@
 
 <style scoped>
 
-.content {
-	width: 500px;
-}
 /*轮播图样式 开始*/
 .mint-swipe {
 		height: 375px;

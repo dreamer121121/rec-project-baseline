@@ -13,10 +13,18 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 //Mint:安装插件
 Vue.use(Mint);
+
+
 //MUI:引入mui的样式
 import './static/vendor/mui/dist/css/mui.css';
 //全局样式
 import './static/css/global.css';
+//引入bootstrap样式
+import './static/css/bootstrap.css';
+//引入style样式
+// import './static/css/font-awesome.css';
+
+
 //Axios:引入axios
 import Axios from 'axios';
 //挂载原型
@@ -27,6 +35,9 @@ Axios.defaults.baseURL = 'http://localhost:8000/api/get/';
 import Moment from 'moment';
 
 //引入第三方包 结束
+
+
+
 
 //引入自己的vue文件 开始  
 import App from './app.vue';
@@ -70,6 +81,8 @@ let router = new VueRouter({
         { name: 'pic.share',path:'/picshare',component:PicShare} //图文分享
     ]
 });
+
+
 //创建vue实例
 new Vue({
     el: '#app',
