@@ -68,17 +68,14 @@ Vue.component('navBar',NavBar) //使用最好以nav-bar使用，此处注意驼�
 
 //VueRouter:创建对象并配置路由规则！！！导航
 let router = new VueRouter({
-    linkActiveClass:'mui-active', //设置链接激活时使用的样式
+    linkActiveClass:'menu__item--current', //设置链接激活时使用的样式
     routes: [
         //VueRouter：配置路由规则
         { path: '/', redirect: { name: 'home' } }, //重定向
         { name: 'home', path: '/home', component: Home },//首页
-        { name:'member',path:'/member',component: Member}, //会员
-        { name: 'shopcart',path:'/shopcart',component:Shopcart}, //购物车
-        { name: 'search',path:'/search',component:Search}, //查找
-        { name: 'news.list',path:'/news/list',component:NewsList},//新闻列表
-        { name: 'news.detail',path:'/news/detail',component:NewsDetail},//新闻详情
-        { name: 'pic.share',path:'/picshare',component:PicShare} //图文分享
+        { name:'targetdetection',path:'/detection',component: Member}, //会员
+        { name:'contactus',path:'/contactus',component:Shopcart},
+
     ]
 });
 

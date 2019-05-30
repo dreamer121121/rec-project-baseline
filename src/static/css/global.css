@@ -6,3 +6,13 @@ body {
 .tmpl{
     margin-bottom: 50px;
 }
+.menu--iris .menu__item--current .menu__link,.menu__link:hover {
+	color:#33cc99;
+}
+
+.menu--iris .menu__item--current .menu__link::before,
+.menu--iris .menu__item--current .menu__link::after,.menu__link:hover::before,.menu__link:hover::after {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

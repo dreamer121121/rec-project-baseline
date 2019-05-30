@@ -1,63 +1,56 @@
 <template>
         <div>
        		<!--  头部内容 开始-->
-<!--         	<div class="header">
-        		<h1 class="header-title">目 标 检 测 项 目 展 示</h1>
-        		<ul>
-        			<li><a href="">首页</a></li>
-        			<li><a href="">我们的团队</a></li>
-        			<li><a href="">我们的模型<a></li>
-        			<li><a href="">系统架构</a></li>
-        			<li><a href="">识别展示</a></li>
-        		</ul>
-        	</div> -->
-<div class="banner-top">
-        <div class="header">
-        	<div class="logo">
-			<a href="https://www.buaa.edu.cn/"><img src="./static/images/logo.png" alt=""></a>
+		<div class="banner-top">
+		        <div class="header">
+		        	<div class="logo">
+					<a href="https://www.buaa.edu.cn/"><img src="./static/images/logo.png" alt=""></a>
+					</div>
+					<div class="contact">
+						<div class="agileinfo-phone">
+							<p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 联系电话：1 661 986 4868</p>
+						</div>
+						<div class="agileinfo-phone agileinfo-map">
+							<p><i class="fa fa-map-marker" aria-hidden="true"></i> 联系地址：北京市海淀区学院路37号.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
 			</div>
-			<div class="contact">
-				<div class="agileinfo-phone">
-					<p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 联系电话：1 661 986 4868</p>
-				</div>
-				<div class="agileinfo-phone agileinfo-map">
-					<p><i class="fa fa-map-marker" aria-hidden="true"></i> 联系地址：北京市海淀区学院路37号.</p>
-				</div>
-				<div class="clearfix"> </div>
+	       <div class="w3_navigation">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header navbar-left">
+						<h1>
+						<router-link class="navbar-brand" :to="{name:'home'}"> Target Detection </router-link>
+						</h1>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+						<nav class="menu menu--iris">
+							<ul class="nav navbar-nav menu__list">
+								<li class="menu__item ">
+								<router-link class="menu__link" :to="{name:'home'}">Home</router-link>
+								</li>
+								<li class="menu__item">
+								<a href="javascript:;" class="menu__link" @click="goAnchor('ourteam')">我们的团队</a>
+								</li>
+								<li class="menu__item">
+								<a href="javascript:;" class="menu__link" @click="goAnchor('model')">我们的模型</a>
+								</li>
+
+								<li class="menu__item">
+									<router-link :to="{name:'targetdetection'}" class="menu__link" >目标检测展示</router-link>
+								</li>
+								<li class="menu__item">
+								<router-link :to="{name:'contactus'}" class="menu__link">联系我们</router-link>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</nav>
 			</div>
-	</div>
-       <div class="w3_navigation">
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header navbar-left">
-					<h1>
-					<router-link class="navbar-brand" :to="{name:'home'}"> Target Detection </router-link>
-					</h1>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-					<nav class="menu menu--iris">
-						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current">
-							<router-link class="menu__link" :to="{name:'home'}">Home</router-link>
-							</li>
-							<li class="menu__item"><a href="about.html" class="menu__link">我们的团队</a></li>
-							<li class="menu__item"><a href="gallery.html" class="menu__link">我们的模型</a></li>
-							<li class="dropdown menu__item">
-								<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown">用户体验<b class="caret"></b></a>
-								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
-								</ul>
-							</li>
-							<li class="menu__item"><a href="contact.html" class="menu__link">联系我们</a></li>
-						</ul>
-					</nav>
-				</div>
-			</nav>
+			</div>
 		</div>
-	</div>
-</div>
         	<!--  头部内容 结束-->
 			
 			<!-- 主页内容 开始 -->
@@ -65,24 +58,12 @@
         	<!-- 主页内容 结束 -->
 
       		<!-- 底部内容 开始-->
-<!--   			<nav class="mui-bar mui-bar-tab">
-				<router-link class="mui-tab-item" :to="{name:'home'}">
-					<span class="mui-icon icon-shouye"></span>
-					<span class="mui-tab-label">首页</span>
-				</router-link>
-				<router-link class="mui-tab-item" :to="{name:'member'}">
-					<span class="mui-icon icon-huiyuan"></span>
-					<span class="mui-tab-label">会员</span>
-				</router-link>
-				<router-link class="mui-tab-item" :to="{name:'shopcart'}">
-					<span class="mui-icon icon-gouwuche"><span class="mui-badge">9</span></span>
-					<span class="mui-tab-label">购物车</span>
-				</router-link>
-				<router-link class="mui-tab-item" :to="{name:'search'}">
-					<span class="mui-icon icon-fangdajing"></span>
-					<span class="mui-tab-label">查找</span>
-				</router-link>
-			</nav> -->
+                <div class="footer">
+                    <div class=" text-center wow fadeIn" data-wow-delay="0.4s">
+                        <p class="copyright">Copyright &copy; 2015 - Designed By Veronika Poljakova &amp; Developed by Imransdesign.- More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+                    </div>
+                </div>
+
 			<!-- 底部内容 结束-->
         </div>
 </template>
@@ -92,14 +73,17 @@
 	          return {        
 	            }
 	        },
+	        methods:{
+	        	goAnchor (selector) {
+	        		document.getElementById(selector).scrollIntoView();
+	        }
       }
+  }
 </script>
-<style scoped>
-.content {
-/*	width: 1679px;*/
-/*	position: absolute;*/
-}
 
+
+
+<style scoped>
 .mui-bar {
 	margin: 0 auto;
 }
@@ -455,4 +439,27 @@ nav.navbar.navbar-default {
 	margin-top: 25px;
 }
 /*头部样式 结束*/
+
+
+
+/*底部样式 结束*/
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+.footer {
+	background-color: #2d3035;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	line-height: 50px;
+}
+.footer p {
+	color: #fff;
+}
+/*底部样式 结束*/
 </style>
