@@ -2,9 +2,9 @@
         <div> 
         	<!-- 轮播图 开始-->
         	<mt-swipe :auto="4000">
-        	  <mt-swipe-item><a href="#"><img src="../../static/img/timg.jpg" alt=""></a></mt-swipe-item>
+        	  <mt-swipe-item><a href="#"><img src="../../static/img/weilai.jpg" alt=""></a></mt-swipe-item>
 			  <mt-swipe-item><a href="#"><img src="../../static/img/room.jpg" alt=""></a></mt-swipe-item>
-			  <mt-swipe-item><a href="#"><img src="../../static/img/car.jpg" alt=""></a></mt-swipe-item>
+			  <mt-swipe-item><a href="#"><img src="../../static/img/football.jpg" alt=""></a></mt-swipe-item>
 			  <mt-swipe-item><a href="#"><img src="../../static/img/cat.jpg" alt=""></a></mt-swipe-item>
 			</mt-swipe>
 			<!-- 轮播图 结束-->
@@ -129,6 +129,7 @@
 				</div>
 			</div>
 			<!-- 模型展示 结束 -->
+
     	</div>
 </template>
 <script>
@@ -142,10 +143,8 @@
         var txt =  "solidarity means strength !";
         
         var a  = document.getElementById("motto");
-        console.log(txt);
         
         function tim(){
-        	console.log(111111)
             var s = txt.split("");
             
             var length = s.length;

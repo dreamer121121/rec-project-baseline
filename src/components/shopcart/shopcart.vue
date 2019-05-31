@@ -12,19 +12,19 @@
 			<div class="contact-w3-agile2" data-aos="flip-left">
 				<div class="contact-agileits">
 					<h4>Drop a Line</h4>
-					<form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
+					
 					  <div class="col-md-6 w3l_area_its">
 						<div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Full Name:</label>
-		                        <input type="text" class="form-control" name="name" id="name" required data-validation-required-message="Please enter your name.">
+		                        <input type="text" class="form-control" name="name" id="name" value="Please enter your name.">
 		                        <p class="help-block"></p>
 		                    </div>
 		                </div>	
 		                <div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Message :</label>
-	                            <textarea value="Message:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message'; }" rows="15" >Message..</textarea>
+	                            <textarea value="Message:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message'; }" rows="15" id="message">Message..</textarea>
 								<p class="help-block"></p>
 							</div>
 		                </div>
@@ -33,31 +33,60 @@
 		                <div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Email Address:</label>
-		                        <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
+		                        <input type="email" class="form-control" name="email" id="email" value="Please enter your email address.">
 								<p class="help-block"></p>
 							</div>
 		                </div>
 		                <div id="success"></div>
 		                <!-- For success/fail messages -->
-		                <button type="submit" class="btn btn-primary">Send</button>
+		                <button type="submit" class="btn btn-primary" @click='sendMessage'>Send</button>
 						</div>	
-		<div class="clearfix"> </div>					
-					</form>            
+		<div class="clearfix"> </div>					         
 				</div>
 			</div>
-			
 			<div class="clearfix"></div>
 		</div>
 		</div>
 		</div>
-        </div>
+		<div class="alert" v-show='ifshow'>
+			<div class="alert-head"></div>
+			<p>{{message}}</p>
+			<button @click='OK'>确定</button>
+		</div>
+      </div>
 </template>
 <script>
       export default {
 	     data(){
-	          return {        
+	          return {       
+	          		back:[], 
+	          		ifshow:false,
+	          		message:''
 	            }
 	        },
+	        methods:{
+	        	sendMessage(){
+	        		var name = document.getElementById('name').value;
+	        		console.log('name:'+name)
+	        		var email = document.getElementById('email').value;
+	        		console.log("email:"+email)
+	        		var message = document.getElementById('message').value;
+	        		console.log("message:"+message)
+	        		this.$ajax.get('sendMessage?nm='+name+'&email='+email+'&message='+message)
+			        .then(res=>{
+			            this.message = res.data.message[0];
+			            this.ifshow = true;
+			        })
+			        .catch(err=>{
+			        	this.message = "远程服务器错误 ！！！";
+			        	this.ifshow = true;
+			            console.log('err：'+err);
+			        })
+	        	},
+	        	OK(){
+	        		this.ifshow=false;
+	        	}
+	        }
       }
 
 </script>
@@ -65,6 +94,39 @@
 
 
 <style scoped>
+
+/*弹窗样式 开始*/
+
+.alert-head {
+	background-color: blue;
+	height: 30px;
+}
+.alert {
+	height: 150px;
+	width: 300px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	margin-left: -150px;
+	padding:0;
+	border: 1px solid #000;
+}
+
+.alert p {
+	margin-left: 30%;
+	margin-top: 20px;
+	color:#000;
+	font-size: 20px;
+}
+
+.alert button {
+	background-color: green;
+	margin-left: 42%;
+	bottom: 0;
+	position:absolute;
+}
+/*弹窗样式 结束*/
 
 .banner-1 {
     background: url('../../static/images/banner2.jpg') no-repeat 0px -104px;

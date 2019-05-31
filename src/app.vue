@@ -453,13 +453,14 @@ nav.navbar.navbar-default {
 .footer {
 	background-color: #2d3035;
 	height: 50px;
-	position: fixed;
-	bottom: 0;
+	position: absolute;
+	bottom: 0px;
 	width: 100%;
 	line-height: 50px;
 }
 .footer p {
 	color: #fff;
+	margin-bottom: 0px;
 }
 /*底部样式 结束*/
 </style>
