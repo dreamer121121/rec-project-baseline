@@ -1,69 +1,68 @@
 <template>
-        <div>
+        <div class="tmpl">
        		<!--  头部内容 开始-->
-		<div class="banner-top">
-		        <div class="header">
-		        	<div class="logo">
-					<a href="https://www.buaa.edu.cn/"><img src="./static/images/logo.png" alt=""></a>
-					</div>
-					<div class="contact">
-						<div class="agileinfo-phone">
-							<p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 联系电话：1 661 986 4868</p>
+			<div class="banner-top">
+			        <div class="header">
+			        	<div class="logo">
+						<a href="https://www.buaa.edu.cn/"><img src="./static/images/logo.png" alt=""></a>
 						</div>
-						<div class="agileinfo-phone agileinfo-map">
-							<p><i class="fa fa-map-marker" aria-hidden="true"></i> 联系地址：北京市海淀区学院路37号.</p>
+						<div class="contact">
+							<div class="agileinfo-phone">
+								<p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 联系电话：1 661 986 4868</p>
+							</div>
+							<div class="agileinfo-phone agileinfo-map">
+								<p><i class="fa fa-map-marker" aria-hidden="true"></i> 联系地址：北京市海淀区学院路37号.</p>
+							</div>
+							<div class="clearfix"> </div>
 						</div>
-						<div class="clearfix"> </div>
-					</div>
-			</div>
-	       <div class="w3_navigation">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="navbar-header navbar-left">
-						<h1>
-						<router-link class="navbar-brand" :to="{name:'home'}"> Target Detection </router-link>
-						</h1>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-						<nav class="menu menu--iris">
-							<ul class="nav navbar-nav menu__list">
-								<li class="menu__item ">
-								<router-link class="menu__link" :to="{name:'home'}">Home</router-link>
-								</li>
-								<li class="menu__item">
-								<a href="javascript:;" class="menu__link" @click="goAnchor('ourteam')">我们的团队</a>
-								</li>
-								<li class="menu__item">
-								<a href="javascript:;" class="menu__link" @click="goAnchor('model')">我们的模型</a>
-								</li>
+				</div>
+		       <div class="w3_navigation">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<h1>
+							<router-link class="navbar-brand" :to="{name:'home'}"> Target Detection </router-link>
+							</h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--iris">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item ">
+									<router-link class="menu__link" :to="{name:'home'}">Home</router-link>
+									</li>
+									<li class="menu__item">
+									<a href="javascript:;" class="menu__link" @click="goAnchor('ourteam')">我们的团队</a>
+									</li>
+									<li class="menu__item">
+									<a href="javascript:;" class="menu__link" @click="goAnchor('model')">我们的模型</a>
+									</li>
 
-								<li class="menu__item">
-									<router-link :to="{name:'targetdetection'}" class="menu__link" >目标检测展示</router-link>
-								</li>
-								<li class="menu__item">
-								<router-link :to="{name:'contactus'}" class="menu__link">联系我们</router-link>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</nav>
+									<li class="menu__item">
+										<router-link :to="{name:'targetdetection'}" class="menu__link" >目标检测展示</router-link>
+									</li>
+									<li class="menu__item">
+									<router-link :to="{name:'contactus'}" class="menu__link">联系我们</router-link>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+				</div>
 			</div>
-			</div>
-		</div>
         	<!--  头部内容 结束-->
 			
 			<!-- 主页内容 开始 -->
-        	<router-view class="content"></router-view>
+        	<router-view class='content'></router-view>
         	<!-- 主页内容 结束 -->
 
       		<!-- 底部内容 开始-->
-                <div class="footer">
-                    <div class=" text-center wow fadeIn" data-wow-delay="0.4s">
-                        <p class="copyright">Copyright &copy; 2015 - Designed By Veronika Poljakova &amp; Developed by Imransdesign.- More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-                    </div>
+            <div class="footer">
+                <div class=" text-center wow fadeIn" data-wow-delay="0.4s">
+                    <p class="copyright">Copyright &copy; 2019 - Designed By Tao xia Developed by Guan wang&amp;Ni hua&amp;Lin chen</a></p>
                 </div>
-
+            </div>
 			<!-- 底部内容 结束-->
         </div>
 </template>
@@ -440,6 +439,11 @@ nav.navbar.navbar-default {
 }
 /*头部样式 结束*/
 
+/*内容样式 开始*/
+.content {
+	min-height: 1000px;
+}
+/*内容样式 结束*/
 
 
 /*底部样式 结束*/
@@ -453,8 +457,7 @@ nav.navbar.navbar-default {
 .footer {
 	background-color: #2d3035;
 	height: 50px;
-	position: absolute;
-	bottom: 0px;
+	bottom: 0;
 	width: 100%;
 	line-height: 50px;
 }

@@ -125,7 +125,7 @@
 			<div class="news" id="model">
 				<div class="container">
 						<h3 class="wthree_head">Model Introduction</h3>
-						<p class="w3l_sub_para_agile">solidarity means strength !</p>
+						<p class="w3l_sub_para_agile" id="motto2"></p>
 				</div>
 			</div>
 			<!-- 模型展示 结束 -->
@@ -140,22 +140,21 @@
 	        },
 	    mounted(){
       	var matha = 50;
-        var txt =  "solidarity means strength !";
+        var txt_list = ["solidarity means strength !","make perfection more perfect !"];
+        var obj_list = [document.getElementById("motto"),document.getElementById("motto2")];
         
-        var a  = document.getElementById("motto");
-        
-        function tim(){
-            var s = txt.split("");
-            
+        function tim(txt,obj){
+        	console.log(obj);
+            var s = txt.split("");       
             var length = s.length;
             var i  = 0;
-        
+
             setInterval(function(){
                 if(i<length)
                 {   var tem  = s[i++];
                 
-                    a.innerHTML+=tem;
-                    a.style.color=getColor();
+                    obj.innerHTML+=tem;
+                    obj.style.color=getColor();
                     //document.body.style.backgroundColor=getColor();
                 }
             },matha)
@@ -169,9 +168,15 @@
             return "rgb("+RED+","+GREEN+","+BLUE+")";
         }
                 
-        tim();  
+        setInterval(function(){
+        	for (var i=0;i<=1;i++){
+        		obj_list[i].innerHTML = '';
+        		tim(txt_list[i],obj_list[i]);  
+        	}
+        },5000)
+
        		
-      } //mounted等模板渲染完毕后再调用函数，created是vue实例化后立即执行因此找不到id
+      } //mounted等模板渲染完毕后再调用函数，created是vue实例化后立即执行因此无法操作DOM
 
    }
 
@@ -196,6 +201,12 @@
 
 
 /*团队介绍样式 开始*/
+#motto {
+	height: 10px;
+}
+#motto2 {
+	height: 10px;
+}
 .news-left {
     margin-bottom: 2em;
 }

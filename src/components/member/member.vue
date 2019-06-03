@@ -1,14 +1,30 @@
 <template>
 	<div id="wrapper">
-        <h1>请上传文件</h1>
-        <div class="upload-btn common mb_10" v-if="!isShow">
-            <label>
-                <input type="file" @change="uploadImg">
-            </label>
+        <div class="upload-image">
+            <h1>待检测图片</h1>
+            <div class="upload-btn" >
+                <label>
+                    <button type="file" @change="uploadImg">上传</button>
+                    <button>删除</button>
+                </label>
+            </div>
+            <div>
+                <img :src="src">
+<!--                 <i class="del-img" @click="forkImage"></i> -->
+            </div>
         </div>
-        <div class="img-list-item common mb_10" v-if="isShow">
-            <img :src="src" class="common">
-            <i class="del-img" @click="forkImage"></i>
+        <div class="prediction-image">
+            <h1>检测结果</h1>
+            <div class="upload-btn" >
+                <label>
+                    <button type="file" @change="uploadImg">上传</button>
+                    <button>删除</button>
+                </label>
+            </div>
+            <div>
+                <img :src="src">
+<!--                 <i class="del-img" @click="forkImage"></i> -->
+            </div>
         </div>
     </div>
 </template>
@@ -17,7 +33,6 @@
 	     data(){
 	          return {   
 	          src: '',
-              isShow:True,     
 	            }
 	        },
 	    methods: {
@@ -40,52 +55,39 @@
     }
  }
 </script>
+
+
+
 <style>
 
-.common {
-        width: 148px;
-        height: 148px;
-        border: 1px solid #d8d8d9;
-    }
-    .img-list-item {
-        position: relative;
-        margin: auto;
-    }
-    .img-list-item img {
-        box-sizing: border-box;
-        vertical-align: middle;
-        border: 0;       
-    }
-    .img-list-item i.del-img {
-        width: 15px;
-        height: 15px;
-        display: inline-block;
-        background: rgba(0,0,0,.6);
-        background-image: url('../../static/images/g1.jpg');
-        background-size: 10px;
-        background-repeat: no-repeat;
-        background-position: 50%;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-    .upload-btn {
-        margin: auto;
-    }
-    input[type="file"] {
-        color: transparent;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-    }
-    #wrapper:after {
-        content: ".";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
-    .mb_10 {
-        margin-bottom: 10px; 
-    }
+.upload-btn {
+    margin: auto;
+}
+#wrapper:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.mb_10 {
+    margin-bottom: 10px; 
+}
+.upload-image {
+    float: left;
+    margin-left: 400px;
+}
+.upload-image img {
+    width: 500px;
+    height: 500px;
+}
+.prediction-image {
+    float: left;
+    margin-left: 200px;
+}
+.prediction-image img {
+    width: 500px;
+    height: 500px;
+
+}
 </style>

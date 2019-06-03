@@ -6,7 +6,7 @@
 		<div class="container">
 		<div class="agileits_heading_section">
 					<h3 class="wthree_head">Contact Us</h3>
-					<p class="w3l_sub_para_agile">Give me a message</p>
+					<p class="w3l_sub_para_agile" id="Givemessage"></p>
 				</div>
 		<div class="inner_w3l_agile_grids-1">
 			<div class="contact-w3-agile2" data-aos="flip-left">
@@ -86,6 +86,45 @@
 	        	OK(){
 	        		this.ifshow=false;
 	        	}
+	        },
+	        mounted() {
+
+				    var matha = 50;
+			        var txt_list = ["Give me a message"];
+			        var obj_list = [document.getElementById("Givemessage")];
+			        
+			        function tim(txt,obj){
+			        	console.log(obj);
+			            var s = txt.split("");       
+			            var length = s.length;
+			            var i  = 0;
+
+			            setInterval(function(){
+			                if(i<length)
+			                {   var tem  = s[i++];
+			                
+			                    obj.innerHTML+=tem;
+			                    obj.style.color=getColor();
+			                    //document.body.style.backgroundColor=getColor();
+			                }
+			            },matha)
+			        }
+			        
+			        function getColor(){
+			            var RED=parseInt(Math.random()*255)+1;
+			            var GREEN=parseInt(Math.random()*255)+1;
+			            var BLUE=parseInt(Math.random()*255)+1;
+			            
+			            return "rgb("+RED+","+GREEN+","+BLUE+")";
+			        }
+			                
+			        setInterval(function(){
+			        		var i =0;
+			        		obj_list[i].innerHTML = '';
+			        		tim(txt_list[i],obj_list[i]);  
+
+			        },5000)
+
 	        }
       }
 
@@ -283,5 +322,7 @@ color: #111 !important;
 .contact-agileits h4 {
 	margin-bottom: 35px;
 }
-
+#Givemessage {
+	height: 10px;
+}
 </style>
