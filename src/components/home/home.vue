@@ -25,17 +25,17 @@
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
-									<p>2 comments</p>
+									<p>01</p>
 								</div>
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-									<p>3482</p>
+
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<a href="#"><img src="../../static/images/huani.jpg" alt="" /></a>
-								<h4><a href="#myModal" data-toggle="modal">Pellentesque habitant </a></h4>
+								<img src="../../static/images/huani.jpg" alt="" width="330px" height="220px" />
+								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
 								<p>Donec justo ante, maximus et aliquam et, elementum ac purus. Nam eget ante ac velit laoreet sodales ut vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -49,17 +49,17 @@
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
-									<p>2 comments</p>
+									<p>02</p>
 								</div>
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-									<p>3482</p>
+					
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<a href="#" data-toggle="modal"><img src="../../static/images/wangguan.jpg" alt="" /></a>
-								<h4><a href="#" data-toggle="modal">Pellentesque habitant </a></h4>
+								<img src="../../static/images/wangguan.jpg" alt="" width="330px" height="220px"/>
+								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
 								<p>Nam eget ante ac velit laoreet sodales ut vel nibh. Donec justo ante, maximus et aliquam et, elementum ac purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -76,17 +76,17 @@
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
-									<p>2 comments</p>
+									<p>03</p>
 								</div>
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-									<p>3482</p>
+							
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<a href="#" data-toggle="modal"><img src="../../static/images/chenlin.jpg" alt="" /></a>
-								<h4><a href="#myModal" data-toggle="modal">Pellentesque habitant </a></h4>
+								<img src="../../static/images/chenlin.jpg" alt="" width="330px" height="220px"/>
+								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
 								<p>Donec justo ante, maximus et aliquam et, elementum ac purus. Nam eget ante ac velit laoreet sodales ut vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -100,17 +100,17 @@
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
-									<p>2 comments</p>
+									<p>04</p>
 								</div>
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-									<p>3482</p>
+							
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<a href="#" data-toggle="modal"><img src="../../static/images/huani2.jpg" alt="" /></a>
-								<h4><a href="#myModal" data-toggle="modal">Pellentesque habitant </a></h4>
+								<img src="../../static/images/huani2.jpg" alt="" width="330px" height="220px"/>
+								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
 								<p>Nam eget ante ac velit laoreet sodales ut vel nibh. Donec justo ante, maximus et aliquam et, elementum ac purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -321,6 +321,10 @@ h3.wthree_head.two {
 }
 .news {
     padding: 5em 0;
+}
+.ourteam img {
+	width: 330px;
+	height: 220px;
 }
 /*团队介绍样式 结束*/
 </style>
