@@ -4,6 +4,7 @@
         <h3 class="w3l_header">Welcome To <span>Our Website</span></h3>
         <p>You can upload a image in the left,and our system will detect the target in ur photo</p>
         </div>
+        <form method="post" id='postdata' enctype='multipart/form-data' name="img"></form>
         <div class="upload-image">
             <h1>待检测图片</h1>
             <div class="upload-btn" >
@@ -12,14 +13,14 @@
                 <button @click="delimg">删除</button>
             </div>
             <div>
-                <img :src="src">
+                <img :src='src' id="daijiance">
             </div>
         </div>
         <div class="prediction-image">
             <h1>检测结果</h1>
             <div class="upload-btn" >
                 <label>
-                    <button>开始检测</button>
+                    <button @click="postimg">开始检测</button>
                 </label>
             </div>
             <div>
@@ -28,36 +29,56 @@
         </div>
   </div>
 </template>
+<script src="../../jquery-1.12.4.js"></script>
 <script>
-      export default {
+
+  export default {
 	     data(){
 	          return {   
 	          src: '',
             src2:'',
+            file:'',
 	            }
 	        },
 	    methods: {
         uploadImg (e) {
             let _this = this;
             let files = e.target.files[0];
+            this.file = files;
             if (!e || !window.FileReader) return; // 看支持不支持FileReader
             let reader = new FileReader();
             reader.readAsDataURL(files); // 这里是最关键的一步，转换就在这里
             reader.onloadend = function () {
                 _this.src = this.result;
-                _this.isShow = true;
             }
-            console.log("path:"+this.src)
+            console.log(this.src);
         },
         delimg(){
-          this.src='';
           this.src=require('../../static/images/bg.jpg'); 
-        }
+          console.log(this.src);
+        },
+        postimg(){
+          let uploadForm=document.getElementById("postdata");
 
+          let formData = new FormData(uploadForm);
+          formData.append('img',this.file);
+          var url = 'http://localhost:8000/api/post/img';
+          this.$ajax.post(url,formData)
+          .then(res=>{
+            console.log('result-path'+res.data.message[0]);
+            this.src2='../../../backend/detection/images/'+res.data.message[0];
+          })
+          .catch(err=>{
+            console.log('222222222222222 fuck！！！')
+          })
+        }
     },
     mounted() {
+
+      //初始化背景图片
+      // document.getElementById("daijiance").style.backgroundimage="url(../../static/images/bg.jpg)";
       this.src=require('../../static/images/bg.jpg'); 
-      this.src2 = require('../../static/images/bg2.jpg')
+      this.src2 = require('../../static/images/bg2.jpg');
     }
  }
 </script>
@@ -65,7 +86,6 @@
 
 
 <style>
-
 .upload-btn {
     margin: auto;
 }

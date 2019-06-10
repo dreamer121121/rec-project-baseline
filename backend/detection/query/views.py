@@ -1,7 +1,13 @@
 from django.shortcuts import render
 import pymysql
 import uuid
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
+from PIL import Image
+import numpy as np
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+
 # Create your views here.
 
 def send_message(request):
@@ -19,7 +25,6 @@ def send_message(request):
         values = (str(id),name,email,message)
         sql_values = ' values'+str(tuple(values))
         sql += sql_values
-        print("--sql--",sql)
         cursor.execute(sql)
         conn.commit()
         result = {}
@@ -31,3 +36,20 @@ def send_message(request):
         result['status'] = 'failed'
         result['message'] = ["发送信息失败"]
         return JsonResponse(result)
+
+def postimg(request):
+    img = request.FILES.get('img')
+    default_storage.save('C:\\Users\\Tao xia\\Desktop\project\\rec\\backend\\detection\\images\\'+img.name,ContentFile(img.read()))
+    result = {}
+    result['status'] = 'success'
+    result['message'] = [img.name.split('.')[0]+'-result.jpg']
+    return JsonResponse(result)
+
+
+def detect(request):
+    '''
+    调用模型进行检测,将结果保存成图片
+    :param request:
+    :return:
+    '''
+    pass
