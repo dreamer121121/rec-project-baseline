@@ -38,12 +38,19 @@ def send_message(request):
         return JsonResponse(result)
 
 def postimg(request):
-    img = request.FILES.get('img')
-    default_storage.save('C:\\Users\\Tao xia\\Desktop\project\\rec\\backend\\detection\\images\\'+img.name,ContentFile(img.read()))
     result = {}
-    result['status'] = 'success'
-    result['message'] = [img.name.split('.')[0]+'-result.jpg']
-    return JsonResponse(result)
+    try:
+        img = request.FILES.get('img')
+        default_storage.save('C:\\Users\\Tao xia\\Desktop\project\\rec\\backend\\detection\\images\\'+img.name,ContentFile(img.read()))
+        detect(img.name)
+        if img.name in os.listdir("../images/"):
+            result['status'] = 'success'
+            result['message'] = [img.name.split('.')[0]+'-result.jpg']
+            return JsonResponse(result)
+    except Exception as e:
+        result['status'] = 'error'
+        result['message'] = e
+        return JsonResponse(result)
 
 
 def detect(request):
