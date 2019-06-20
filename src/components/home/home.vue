@@ -127,6 +127,9 @@
 						<h3 class="wthree_head">Model Introduction</h3>
 						<p class="w3l_sub_para_agile" id="motto2"></p>
 				</div>
+				<div class="model-box">
+					<img class='model' src="../../static/images/faster-rcnn.jpg" alt=""/>
+				</div>
 			</div>
 			<!-- 模型展示 结束 -->
 
@@ -327,4 +330,17 @@ h3.wthree_head.two {
 	height: 220px;
 }
 /*团队介绍样式 结束*/
+/*模型介绍样式 开始*/
+	.model-box {
+		 height:800px;
+		 position:relative;
+	}
+	.model {
+		position:absolute;
+		left:50%;
+		margin-left:-500px;
+		top:50%;
+		margin-top:-300px;
+	}
+/*模型介绍样式 结束*/
 </style>
