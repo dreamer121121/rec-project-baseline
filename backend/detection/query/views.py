@@ -16,14 +16,14 @@ def send_message(request):
         name = request.GET.get('nm')
         email = request.GET.get('email')
         message = request.GET.get('message')
-        conn = pymysql.Connect(host= 'localhost',db='rec_project',password='123456',user='root')
+        conn = pymysql.Connect(host='localhost', db='rec_project', password='123456', user='root')
         cursor = conn.cursor()
-        fileds = ('id','fullname','email','message')
+        fileds = ('id', 'fullname', 'email', 'message')
         sql = 'insert into detection'
         sql += str(tuple(fileds))
-        sql = sql.replace('\'','')
-        values = (str(id),name,email,message)
-        sql_values = ' values'+str(tuple(values))
+        sql = sql.replace('\'', '')
+        values = (str(id), name, email, message)
+        sql_values = ' values' + str(tuple(values))
         sql += sql_values
         cursor.execute(sql)
         conn.commit()
@@ -37,13 +37,19 @@ def send_message(request):
         result['message'] = ["发送信息失败"]
         return JsonResponse(result)
 
+
 def postimg(request):
     result = {}
     try:
         img = request.FILES.get('img')
-        default_storage.save('/opt/rec_project/backend/detection/images/'+img.name,ContentFile(img.read()))
+        if not img.name:
+            return JsonResponse({'message': 'Please upload a image'})
+        if img.name in os.listdir("/opt/rec_project/backend/detection/images/"):
+            img.name = img.name+'1'
+        else:
+            default_storage.save('/opt/rec_project/backend/detection/images/' + img.name, ContentFile(img.read()))
         detect(img.name)
-        result_img = img.name.split('.')[0]+'-result.jpg'
+        result_img = img.name.split('.')[0] + '-result.jpg'
         if result_img in os.listdir("/opt/rec_project/backend/detection/detected_img/"):
             result['status'] = 'success'
             result['message'] = [result_img]
@@ -57,6 +63,7 @@ def postimg(request):
 def detect(request):
     '''
     调用模型进行检测,将结果保存成图片
+    模型将检测结果图片存储到detected_img中
     :param request:
     :return:
     '''
