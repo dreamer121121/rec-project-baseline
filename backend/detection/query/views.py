@@ -41,11 +41,12 @@ def postimg(request):
     result = {}
     try:
         img = request.FILES.get('img')
-        default_storage.save('C:\\Users\\Tao xia\\Desktop\project\\rec\\backend\\detection\\images\\'+img.name,ContentFile(img.read()))
+        default_storage.save('/opt/rec_project/backend/detection/images/'+img.name,ContentFile(img.read()))
         detect(img.name)
-        if img.name in os.listdir("../images/"):
+        result_img = img.name.split('.')[0]+'-result.jpg'
+        if result_img in os.listdir("/opt/rec_project/backend/detection/detected_img/"):
             result['status'] = 'success'
-            result['message'] = [img.name.split('.')[0]+'-result.jpg']
+            result['message'] = [result_img]
             return JsonResponse(result)
     except Exception as e:
         result['status'] = 'error'

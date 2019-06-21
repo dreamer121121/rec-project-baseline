@@ -62,11 +62,11 @@
 
           let formData = new FormData(uploadForm);
           formData.append('img',this.file);
-          var url = 'http://localhost:8000/api/post/img';
+          var url = 'http://192.168.1.40:8080/api/post/img';
           this.$ajax.post(url,formData)
           .then(res=>{
             console.log('result-path'+res.data.message[0]);
-            this.src2='../../../backend/detection/images/'+res.data.message[0];
+            this.src2='http://192.168.1.40:8080/result_img/'+res.data.message[0];
           })
           .catch(err=>{
             console.log('222222222222222 fuck！！！')
