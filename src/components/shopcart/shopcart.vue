@@ -17,14 +17,14 @@
 						<div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Full Name:</label>
-		                        <input type="text" class="form-control" name="name" id="name" value="Please enter your name.">
+		                        <input type="text" class="form-control" name="name" id="name" value="Please enter your name." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Please enter your name.'; }">
 		                        <p class="help-block"></p>
 		                    </div>
 		                </div>	
 		                <div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Message :</label>
-	                            <textarea value="Message:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message'; }" rows="15" id="message">Message..</textarea>
+	                            <textarea value="Message:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message..'; }" rows="15" id="message">Message..</textarea>
 								<p class="help-block"></p>
 							</div>
 		                </div>
@@ -33,7 +33,7 @@
 		                <div class="control-group form-group">
 		                    <div class="controls">
 		                        <label class="contact-p1">Email Address:</label>
-		                        <input type="email" class="form-control" name="email" id="email" value="Please enter your email address.">
+		                        <input type="email" class="form-control" id="email" value="Please enter your email address." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Please enter your email address.'; }">
 								<p class="help-block"></p>
 							</div>
 		                </div>
@@ -325,4 +325,6 @@ color: #111 !important;
 #Givemessage {
 	height: 10px;
 }
+
+
 </style>

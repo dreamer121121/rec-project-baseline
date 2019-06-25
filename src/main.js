@@ -68,7 +68,7 @@ Vue.component('navBar',NavBar) //使用最好以nav-bar使用，此处注意驼�
 
 //VueRouter:创建对象并配置路由规则！！！导航
 let router = new VueRouter({
-    linkActiveClass:'menu__item--current', //设置链接激活时使用的样式
+    linkActiveClass:'test-active', //设置链接激活时使用的样式
     routes: [
         //VueRouter：配置路由规则
         { path: '/', redirect: { name: 'home' } }, //重定向
@@ -78,7 +78,6 @@ let router = new VueRouter({
 
     ]
 });
-
 
 //创建vue实例
 new Vue({

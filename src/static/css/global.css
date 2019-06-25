@@ -8,10 +8,42 @@ html,body {
 .menu--iris .menu__item--current .menu__link,.menu__link:hover {
 	color:#33cc99;
 }
+.menu--iris .menu__link::before {
+	top: 0;
+	left: 0;
+	border-width: 2px 0 0 2px;
+	-webkit-transform: translate3d(10px, 10px, 0);
+	transform: translate3d(10px, 10px, 0);
+}
+
+.menu--iris .menu__link::after {
+	right: 0;
+	bottom: 0;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: translate3d(-10px, -10px, 0);
+	transform: translate3d(-10px, -10px, 0);
+}
 
 .menu--iris .menu__item--current .menu__link::before,
 .menu--iris .menu__item--current .menu__link::after,.menu__link:hover::before,.menu__link:hover::after {
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+}
+
+.test-active {
+	color:red;
+	background: linear-gradient(to left, #33cc99, #33cc99) left top no-repeat, 
+	linear-gradient(to bottom, #33cc99, #33cc99) left top no-repeat, 
+	linear-gradient(to left, #33cc99,#33cc99) right top no-repeat,
+	linear-gradient(to bottom,#33cc99,#33cc99) right top no-repeat, 
+	linear-gradient(to left, #33cc99,#33cc99) left bottom no-repeat,
+	linear-gradient(to bottom,#33cc99,#33cc99) left bottom no-repeat,
+	linear-gradient(to left, #33cc99,#33cc99) right bottom no-repeat,
+	linear-gradient(to left, #33cc99,#33cc99) right bottom no-repeat;
+	   /*设置大小*/
+	background-size: 0.15rem 0.6rem, 0.6rem 0.15rem, 0.15rem 0.6rem, 0.6rem 0.15rem;
+	height: 20px;
+	line-height: 20px;
+	color: #33cc99;
 }

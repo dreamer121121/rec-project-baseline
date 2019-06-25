@@ -21,7 +21,7 @@
 					<nav class="navbar navbar-default">
 						<div class="navbar-header navbar-left">
 							<h1>
-							<router-link class="navbar-brand" :to="{name:'home'}"> Target Detection </router-link>
+							<div class="navbar-brand" > Target Detection</div>  
 							</h1>
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,13 +29,7 @@
 							<nav class="menu menu--iris">
 								<ul class="nav navbar-nav menu__list">
 									<li class="menu__item ">
-									<router-link class="menu__link" :to="{name:'home'}">Home</router-link>
-									</li>
-									<li class="menu__item">
-									<a href="javascript:;" class="menu__link" @click="goAnchor('ourteam')">我们的团队</a>
-									</li>
-									<li class="menu__item">
-									<a href="javascript:;" class="menu__link" @click="goAnchor('model')">我们的模型</a>
+									<router-link class="menu__link" :to="{name:'home'}" >主页</router-link>
 									</li>
 
 									<li class="menu__item">
@@ -278,8 +272,9 @@ p.logo_w3l_agile_caption {
 	margin: 1em 0;
 }
 
-.menu__link {
-	font-size: 1.05em;
+/*.menu__link {*/
+/*	font-size: 1.05em;*/
+/*	font-size: 15px;
 	font-weight: bold;
 	display: block;
 	padding: 1em;
@@ -291,29 +286,30 @@ p.logo_w3l_agile_caption {
 	-webkit-touch-callout: none;
 	-khtml-user-select: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+
+}*/
 /* Iris */
-.menu--iris .menu__item {
+/*.menu--iris .menu__item {
 	margin:0 0.5em;
 }
-
-.menu--iris .menu__link {
+*/
+/*.menu--iris .menu__link {
 	position: relative;
 	text-align: center;
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
-}
+}*/
 
-.menu--iris .menu__link:hover,
+/*.menu--iris .menu__link:hover,
 .menu--iris .menu__link:focus {
-	color: #929292;
-}
+	color: #33cc99;
+}*/
 
-.menu--iris .menu__item--current .menu__link,.menu__link:hover {
+/*.menu--iris .menu__item--current .menu__link,.menu__link:hover {
 	color:#33cc99;
-}
+}*/
 
-.menu--iris .menu__link::before,
+/*.menu--iris .menu__link::before,
 .menu--iris .menu__link::after {
 	content: '';
 	position: absolute;
@@ -326,35 +322,10 @@ p.logo_w3l_agile_caption {
 	-webkit-transition-timing-function: cubic-bezier(0.17, 0.67, 0.05, 1.29);
 	transition-timing-function: cubic-bezier(0.17, 0.67, 0.05, 1.29);
 }
+*/
 
-.menu--iris .menu__link::before {
-	top: 0;
-	left: 0;
-	border-width: 2px 0 0 2px;
-	-webkit-transform: translate3d(10px, 10px, 0);
-	transform: translate3d(10px, 10px, 0);
-}
-
-.menu--iris .menu__link::after {
-	right: 0;
-	bottom: 0;
-	border-width: 0 2px 2px 0;
-	-webkit-transform: translate3d(-10px, -10px, 0);
-	transform: translate3d(-10px, -10px, 0);
-}
-
-.menu--iris .menu__item--current .menu__link::before,
-.menu--iris .menu__item--current .menu__link::after,.menu__link:hover::before,.menu__link:hover::after {
-	opacity: 1;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-.dropdown-menu {
-    position: absolute;
-    top: 226%;
-    left: 0;
-    z-index: 1000;
-    display: none;
+.menu__link {
+	color: red;
 }
 /*-- //nav-effect --*/
 /*-- banner-text --*/ 
