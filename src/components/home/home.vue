@@ -58,7 +58,7 @@
 							</div>
 							<div class="w3-agile-news-img">
 								<div class="single-team-box"><img src="../../static/images/wangguan.jpg" alt="" width="330px" height="220px"/></div>
-								<h4><a data-toggle="modal">model training and testing</a></h4>
+								<h4><a data-toggle="modal">Model training and testing</a></h4>
 								<p>In this project, I was mainly responsible for model training and testing, and solved many mistakes, which made me feel a sense of achievement and thanked my teammates for their help.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -109,7 +109,7 @@
 							</div>
 							<div class="w3-agile-news-img">
 								<div class="single-team-box"><img src="../../static/images/xiatao.png" alt="" width="330px" height="220px"/></div>
-								<h4><a data-toggle="modal">demonstration system design</a></h4>
+								<h4><a data-toggle="modal">Demonstration system design</a></h4>
 								<p>In this project, I was mainly responsible for the design and implementation of the demonstration system.Thanks to my teammates and teachers, I benefited a lot from their help.</p>
 							</div>
 							<div class="clearfix"> </div>
@@ -127,7 +127,16 @@
 						<p class="w3l_sub_para_agile" id="motto2"></p>
 				</div>
 				<div class="model-box">
-					<img class='model' src="../../static/images/faster-rcnn.jpg" alt=""/>
+					<div class='model1' ><img   src="../../static/images/faster-rcnn.jpg" alt=""/></div>
+					<p class="model-intro">
+					（1）Conv layers。作为一种CNN网络目标检测的方法，Faster R-CNN首先使用一组基础conv+relu+pooling层提取图片的特征。该特征(feature maps)被共享用于后续的RPN层和全连接层。
+					（2）Region Proposal Networks。RPN层是Faster R-CNN最大的亮点，RPN网络用于生成目标区域建议(region proposals)，该层通过softmax判断锚(anchors)属于前景(foreground)或者背景(background)，再利用边框回归(bounding box regression)修正锚获得精确的建议(proposals)。
+
+				（3）RoI Pooling层。该层收集输入的特征(feature maps)和建议(proposals)，综合这些信息提取建议特征(proposal feature maps)，送入后续的全连接层判定目标类别。
+					
+				（4）Classification。利用建议特征（proposal feature maps）计算建议（proposal）类别，同时再次通过边框回归（bounding box regression）获得检验框的最终精确地位置。
+					</p>
+					<div class='model' ><img   src="../../static/images/faster-rcnn2.jpg" alt=""/></div>
 				</div>
 			</div>
 			<!-- 模型展示 结束 -->
@@ -335,12 +344,36 @@ h3.wthree_head.two {
 		 position:relative;
 	}
 	.model {
-		position:absolute;
-		left:50%;
-		margin-left:-500px;
-		top:50%;
-		margin-top:-300px;
+		display: block;
+		margin:auto;
+		margin-top: 80px;
+		text-align: center;
 	}
+	.model1 {
+		display: block;
+		margin:auto;
+		margin-top: 80px;
+		text-align: center;
+	}
+	.model1:hover {
+		box-shadow:0px 5px 35px 5px rgba(6,5,49,.2);
+		transition: 3s;
+	}
+
+	.model-intro {
+		width: 500px;
+		position: absolute;
+		bottom: 460px;
+		left: 200px;
+		display: none;
+		color: #007bff;
+		transition: 3s;
+	}
+	.model1:hover+.model-intro {
+		display: block;
+		transition: 3s;
+	}
+
 	.single-team-box {
 		width: 330px;
 		height: 220px;

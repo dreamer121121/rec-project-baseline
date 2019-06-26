@@ -142,6 +142,7 @@
 
 .wthree_head_section {
     margin-bottom: 5em;
+    border-top: 2px solid #000;
 }
 .w3l_header:after {
     border-top: 2px solid #89379a;
@@ -152,7 +153,7 @@
 }
 .w3l_header {
     font-size: 3em;
-    color: #262c38;
+    color: #ff7d27;
     letter-spacing: 1px;
     position: relative;
     font-weight: 600;

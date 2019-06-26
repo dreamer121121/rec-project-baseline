@@ -120,8 +120,10 @@
     background:none;
 }
 .navbar-default .navbar-nav > li > a {
-    font-weight: 500;
+    font-weight: 566;
     letter-spacing: 1px;
+    font-size: 16px;
+
 }
 .navbar-nav > li > a {
     margin: 0;

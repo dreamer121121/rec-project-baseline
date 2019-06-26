@@ -32,7 +32,6 @@ html,body {
 }
 
 .test-active {
-	color:red;
 	background: linear-gradient(to left, #33cc99, #33cc99) left top no-repeat, 
 	linear-gradient(to bottom, #33cc99, #33cc99) left top no-repeat, 
 	linear-gradient(to left, #33cc99,#33cc99) right top no-repeat,
@@ -42,7 +41,7 @@ html,body {
 	linear-gradient(to left, #33cc99,#33cc99) right bottom no-repeat,
 	linear-gradient(to left, #33cc99,#33cc99) right bottom no-repeat;
 	   /*设置大小*/
-	background-size: 0.15rem 0.6rem, 0.6rem 0.15rem, 0.15rem 0.6rem, 0.6rem 0.15rem;
+	background-size: 0.25rem 0.8rem, 0.8rem 0.25rem, 0.25rem 0.8rem, 0.8rem 0.25rem;
 	height: 20px;
 	line-height: 20px;
 	color: #33cc99;
