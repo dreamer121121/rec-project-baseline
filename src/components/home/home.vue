@@ -34,9 +34,9 @@
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<img src="../../static/images/huani.jpg" alt="" width="330px" height="220px" />
-								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
-								<p>Donec justo ante, maximus et aliquam et, elementum ac purus. Nam eget ante ac velit laoreet sodales ut vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="single-team-box"><img src="../../static/images/huani.jpg" alt="" width="330px" height="220px" /></div>
+								<h4><a data-toggle="modal">Report writting and data collection</a></h4>
+								<p>In this course design, I am mainly responsible for the writing of the report, including data collection, literature review,  report integration and format arrangement.</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -54,13 +54,12 @@
 								<div class="agileits-line"> </div>
 								<div class="agile-news-icon">
 									<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-					
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<img src="../../static/images/wangguan.jpg" alt="" width="330px" height="220px"/>
-								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
-								<p>Nam eget ante ac velit laoreet sodales ut vel nibh. Donec justo ante, maximus et aliquam et, elementum ac purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="single-team-box"><img src="../../static/images/wangguan.jpg" alt="" width="330px" height="220px"/></div>
+								<h4><a data-toggle="modal">model training and testing</a></h4>
+								<p>In this project, I was mainly responsible for model training and testing, and solved many mistakes, which made me feel a sense of achievement and thanked my teammates for their help.</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div> 
@@ -85,9 +84,9 @@
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<img src="../../static/images/chenlin.jpg" alt="" width="330px" height="220px"/>
-								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
-								<p>Donec justo ante, maximus et aliquam et, elementum ac purus. Nam eget ante ac velit laoreet sodales ut vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="single-team-box"><img src="../../static/images/chenlin.jpg" alt="" width="330px" height="220px"/></div>
+								<h4><a data-toggle="modal">Algorithm design and improvement</a></h4>
+								<p>In this engineering practice, I am mainly responsible for the design, understanding and improvement of the overall algorithm.</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -109,9 +108,9 @@
 								</div>
 							</div>
 							<div class="w3-agile-news-img">
-								<img src="../../static/images/huani2.jpg" alt="" width="330px" height="220px"/>
-								<h4><a data-toggle="modal">Pellentesque habitant </a></h4>
-								<p>Nam eget ante ac velit laoreet sodales ut vel nibh. Donec justo ante, maximus et aliquam et, elementum ac purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="single-team-box"><img src="../../static/images/xiatao.png" alt="" width="330px" height="220px"/></div>
+								<h4><a data-toggle="modal">demonstration system design</a></h4>
+								<p>In this project, I was mainly responsible for the design and implementation of the demonstration system.Thanks to my teammates and teachers, I benefited a lot from their help.</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div> 
@@ -341,6 +340,14 @@ h3.wthree_head.two {
 		margin-left:-500px;
 		top:50%;
 		margin-top:-300px;
+	}
+	.single-team-box {
+		width: 330px;
+		height: 220px;
+		transition: 0.5s; 
+	}
+	.single-team-box:hover {
+		box-shadow:0px 5px 35px 5px rgba(6,5,49,.2);
 	}
 /*模型介绍样式 结束*/
 </style>
