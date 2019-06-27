@@ -5,33 +5,34 @@
         <p>You can upload a image in the left,and our system will detect the target in ur photo</p>
         </div>
         <form method="post" id='postdata' enctype='multipart/form-data' name="img"></form>
-        <div class="upload-image">
-            <h1>待检测图片</h1>
-            <div class="upload-btn" >
-                <input type="file" @change="uploadImg" id="upload">
-                <button>上传一张图像</button>
-                <button @click="delimg">删除</button>
-            </div>
-            <div>
-                <img :src='src' id="daijiance">
-            </div>
-        </div>
-        <div class="prediction-image">
-            <h1>检测结果</h1>
-            <div class="upload-btn" >
-                <label>
-                    <button @click="postimg">开始检测</button>
-                </label>
-            </div>
-            <div>
-                <img :src="src2">
-            </div>
+        <div class="detect">
+          <div class="upload-image">
+              <h1>待检测图片</h1>
+              <div class="upload-btn" >
+                  <input type="file" @change="uploadImg" id="upload">
+                  <button>上传一张图像</button>
+                  <button @click="delimg">删除</button>
+              </div>
+              <div>
+                  <img :src='src' id="daijiance">
+              </div>
+          </div>
+          <div class="prediction-image">
+              <h1>检测结果</h1>
+              <div class="upload-btn" >
+                  <label>
+                      <button @click="postimg">开始检测</button>
+                  </label>
+              </div>
+              <div>
+                  <img :src="src2">
+              </div>
+          </div>
         </div>
   </div>
 </template>
 <script src="../../jquery-1.12.4.js"></script>
 <script>
-
   export default {
 	     data(){
 	          return {   
@@ -76,14 +77,11 @@
     mounted() {
 
       //初始化背景图片
-      // document.getElementById("daijiance").style.backgroundimage="url(../../static/images/bg.jpg)";
       this.src=require('../../static/images/bg.jpg'); 
       this.src2 = require('../../static/images/bg2.jpg');
     }
  }
 </script>
-
-
 
 <style>
 .upload-btn {
@@ -117,9 +115,7 @@
 }
 .upload-image {
     float: left;
-    margin-left: 400px;
 }
-
 .upload-image .upload-btn {
   margin-bottom: 10px;
 }
@@ -170,5 +166,10 @@
     width: 60%;
     color: #5e5e5e;
     line-height: 1.8em;
+}
+.detect {
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
 }
 </style>

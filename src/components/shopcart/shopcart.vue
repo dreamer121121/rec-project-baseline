@@ -12,7 +12,6 @@
 			<div class="contact-w3-agile2" data-aos="flip-left">
 				<div class="contact-agileits">
 					<h4>Drop a Line</h4>
-					
 					  <div class="col-md-6 w3l_area_its">
 						<div class="control-group form-group">
 		                    <div class="controls">
@@ -47,13 +46,15 @@
 			<div class="clearfix"></div>
 		</div>
 		</div>
-		</div>
+	</div>
+		<!-- 消息框 开始-->
 		<div class="alert" v-show='ifshow'>
-			<div class="alert-head"></div>
+			<div :class="{'message-logo-right':choose1,'message-logo-error':choose2}"></div>
 			<p>{{message}}</p>
-			<button @click='OK'>确定</button>
+			<div class="button"><button @click='OK'>我知道了</button></div>
 		</div>
-      </div>
+		<!-- 消息框 结束-->
+    </div>
 </template>
 <script>
       export default {
@@ -61,7 +62,9 @@
 	          return {       
 	          		back:[], 
 	          		ifshow:false,
-	          		message:''
+	          		message:'',
+	          		choose1:true,
+	          		choose2:false
 	            }
 	        },
 	        methods:{
@@ -78,8 +81,10 @@
 			            this.ifshow = true;
 			        })
 			        .catch(err=>{
-			        	this.message = "远程服务器错误 ！！！";
+			        	this.message = "远 程 服 务 器 错 误 ！！！";
 			        	this.ifshow = true;
+			        	this.choose1 = false;
+			     		this.choose2 = true;
 			            console.log('err：'+err);
 			        })
 	        	},
@@ -88,7 +93,6 @@
 	        	}
 	        },
 	        mounted() {
-
 				    var matha = 50;
 			        var txt_list = ["Give me a message"];
 			        var obj_list = [document.getElementById("Givemessage")];
@@ -129,19 +133,12 @@
       }
 
 </script>
-
-
-
 <style scoped>
 
 /*弹窗样式 开始*/
 
-.alert-head {
-	background-color: blue;
-	height: 30px;
-}
 .alert {
-	height: 150px;
+	height: 200px;
 	width: 300px;
 	background-color: #fff;
 	position: absolute;
@@ -153,17 +150,23 @@
 }
 
 .alert p {
-	margin-left: 30%;
-	margin-top: 20px;
 	color:#000;
+	margin: 20px 0 auto;
 	font-size: 20px;
+	height: 50px;
+	text-align: center;
 }
 
-.alert button {
-	background-color: green;
-	margin-left: 42%;
-	bottom: 0;
-	position:absolute;
+.alert .button {
+	margin: auto;
+	width: 82px;
+	height: 36px;
+	margin-top: 10px;
+}
+
+
+.button button:hover {
+	background-color: #33cc99;
 }
 /*弹窗样式 结束*/
 
@@ -325,6 +328,16 @@ color: #111 !important;
 #Givemessage {
 	height: 10px;
 }
-
-
+.message-logo-right {
+	background: url('../../static/images/message-logo.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	margin: 10px auto;
+}
+.message-logo-error {
+	background: url('../../static/images/message-logo-error.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	margin: 10px auto;
+}
 </style>
