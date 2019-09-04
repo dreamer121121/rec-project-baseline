@@ -130,6 +130,7 @@
 					<div class='model1' ><img   src="../../static/images/faster-rcnn.jpg" alt=""/></div>
 					<div class='model' ><img   src="../../static/images/faster-rcnn2.jpg" alt="" style="width:500px;" /></div>
 					<div class="fixed-box1">
+						<img src="../../static/images/hello.png" alt="" width="300px" height="400px">
 						<p class="model-intro">
 						（1）Conv layers。作为一种CNN网络目标检测的方法，Faster R-CNN首先使用一组基础conv+relu+pooling层提取图片的特征。该特征(feature maps)被共享用于后续的RPN层和全连接层。
 						（2）Region Proposal Networks。RPN层是Faster R-CNN最大的亮点，RPN网络用于生成目标区域建议(region proposals)，该层通过softmax判断锚(anchors)属于前景(foreground)或者背景(background)，再利用边框回归(bounding box regression)修正锚获得精确的建议(proposals)。
@@ -138,7 +139,6 @@
 					<div class="fixed-box2">
 						<p class="model-intro">
 						（3）RoI Pooling层。该层收集输入的特征(feature maps)和建议(proposals)，综合这些信息提取建议特征(proposal feature maps)，送入后续的全连接层判定目标类别。
-							
 						（4）Classification。利用建议特征（proposal feature maps）计算建议（proposal）类别，同时再次通过边框回归（bounding box regression）获得检验框的最终精确地位置。
 						</p>
 					</div>
@@ -346,9 +346,6 @@ h3.wthree_head.two {
 
 
 
-
-
-
 /*模型介绍样式 开始*/
 	.model-box {
 		 height:800px;
@@ -367,7 +364,7 @@ h3.wthree_head.two {
 	.model1 {
 		float: left;
 		text-align: center;
-		margin-left: 400px;
+		margin-left: 485px;
 		margin-top: 100px;
 	}
 	.model1:hover {
@@ -403,7 +400,7 @@ h3.wthree_head.two {
 		box-shadow:0px 5px 35px 5px rgba(6,5,49,.2);
 	}
 	.fixed-box1 {
-		background-color: pink;
+/*		background-color: rgb(255,255,255);*/
 		position: fixed;
 		height: 100px;
 		width: 100px;

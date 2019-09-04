@@ -63,11 +63,14 @@
 
           let formData = new FormData(uploadForm);
           formData.append('img',this.file);
-          var url = 'http://lab.rhzz.com.cn:8004/api/post/img';
+          // var url = 'http://lab.rhzz.com.cn:8004/api/post/img';
+          var url = window.location.origin+'/api/post/img';
+          console.log("url:"+url)
           this.$ajax.post(url,formData)
           .then(res=>{
             console.log('result-path'+res.data.message[0]);
-            this.src2='http://lab.rhzz.com.cn:8004/result_img/'+res.data.message[0];
+            // this.src2='http://lab.rhzz.com.cn:8004/result_img/'+res.data.message[0];
+            this.src2=window.location.origin+'/result_img/'+res.data.message[0];
           })
           .catch(err=>{
             console.log('222222222222222 fuck！！！')

@@ -30,13 +30,11 @@ import Axios from 'axios';
 //挂载原型
 Vue.prototype.$ajax = Axios;
 //默认配置
-Axios.defaults.baseURL = 'http://192.168.1.40:8000/api/get/';
+Axios.defaults.baseURL = `${window.location.origin}`+':8000/api/get/';
 //Moment:引入moment(用于格式化时间)
 import Moment from 'moment';
 
 //引入第三方包 结束
-
-
 
 
 //引入自己的vue文件 开始  

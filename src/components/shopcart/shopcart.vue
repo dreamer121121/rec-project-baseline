@@ -75,7 +75,8 @@
 	        		console.log("email:"+email)
 	        		var message = document.getElementById('message').value;
 	        		console.log("message:"+message)
-	        		this.$ajax.get('http://lab.rhzz.com.cn:8004/api/get/sendMessage?'+'nm='+name+'&email='+email+'&message='+message)
+	        		// this.$ajax.get('http://lab.rhzz.com.cn:8004/api/get/sendMessage?'+'nm='+name+'&email='+email+'&message='+message)
+	        		this.$ajax.get(window.location.origin+'/api/get/sendMessage?'+'nm='+name+'&email='+email+'&message='+message)
 			        .then(res=>{
 			            this.message = res.data.message[0];
 			            this.ifshow = true;
